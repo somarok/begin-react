@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Hello from './Hello';
+import GViewer from './Viewer';
+import { render } from '@testing-library/react';
+// import RViewer from 'react-3d-model-viewer'
+// import ModelViewer from 'react-3d-model-viewer/dist/js/ModelViewer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default function App() {
+  const modelPath = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf';
+  return (       
+    <div>
+      {/* <Hello name="yunzi"/>   */}
+      <GViewer />    
+      {/* <VideoPlayer /> */}    
+      {/* <ModelViewer type="gtlf" src={modelPath} /> */}
+      {/* <ModelViewer type="gtlf" src={modelPath}/> */}
     </div>
   );
-}
+  
+};
 
-export default App;
+ 
+ 
