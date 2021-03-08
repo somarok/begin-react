@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Hello from './Hello';
 import GViewer from './Viewer';
@@ -9,7 +9,7 @@ import { render } from '@testing-library/react';
 export default function App() {
   const modelPath = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf';
   return (       
-    <div>
+    <div  style={{overflow:"scroll"}}>
       {/* <Hello name="yunzi"/>   */}
       <GViewer />    
       {/* <VideoPlayer /> */}    
@@ -18,6 +18,8 @@ export default function App() {
     </div>
   );
   
+
+
 };
 
  
