@@ -2,16 +2,22 @@ import React from 'react';
 import './App.css';
 import Hello from './Hello';
 import GViewer from './Viewer';
-import { render } from '@testing-library/react';
-// import RViewer from 'react-3d-model-viewer'
-// import ModelViewer from 'react-3d-model-viewer/dist/js/ModelViewer';
+import useFullscreen from "./useFullscreen";
 
 export default function App() {
-  const modelPath = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf';
+  const onFullS = (isFull) => {
+    console.log(isFull ? "We are full" : "We are small");
+  };
+  const { element, triggerFull, exitFull } = useFullscreen(onFullS);
   return (       
-    <div  style={{overflow:"scroll"}}>
+    <div  >
+      <div ref={element}>
+        <GViewer />     
+      </div>
+      <br />
+       <button onClick={triggerFull}>Make fullscreen</button>    
+       
       {/* <Hello name="yunzi"/>   */}
-      <GViewer />    
       {/* <VideoPlayer /> */}    
       {/* <ModelViewer type="gtlf" src={modelPath} /> */}
       {/* <ModelViewer type="gtlf" src={modelPath}/> */}
